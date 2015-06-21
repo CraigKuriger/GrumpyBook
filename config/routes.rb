@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'profiles/show'
+
 devise_for :users, controllers: { registrations: "users/registrations" }
 
   resources :statuses
   root to: 'statuses#index'
+
+  get '/:id', to: 'profiles#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
