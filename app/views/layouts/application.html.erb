@@ -10,9 +10,9 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a href="#" class="brand"> GrumpyBook</a>
+				
 				<ul class="nav">
-					<li><%= link_to "NewsFeed", statuses_path %></li>
+					<%= link_to (image_tag "MiniBookWhite.png", :class => "small-image"), root_path, class:"navbar-brand .small-image"%>
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
