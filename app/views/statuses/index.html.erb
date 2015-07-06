@@ -6,6 +6,7 @@
 
 <% @statuses_desc.each do |status| %>
 <div class="status">
+  <p><%= link_to (status.user), profile_path(status.user)%></p>
   <strong><%= link_to status.user.full_name, (status.user.profile_name) %></strong>
   <p><%= status.content %></p>
   <div class="meta">
