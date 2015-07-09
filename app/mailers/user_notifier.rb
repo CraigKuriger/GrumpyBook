@@ -8,4 +8,15 @@ class UserNotifier < ApplicationMailer
 		mail to: @friend.email,
 			 subject: "#{@user.first_name} sent you a friend request"
 	end
+
+	def friend_request_accepted(user_friendship_id)
+	  user_friendship = UserFriendship.find(user_friendship_id)
+
+	  @user = user_friendship.user
+	  @friend = user_friendship.friend
+
+	  mail to: @user.email,
+	       subject: "#{@friend.first_name} has accepted your friend request."
+	end
+	
 end

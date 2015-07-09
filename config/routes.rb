@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   end
 
   resources :user_friendships do
+    member do
+      put :accept
+    end
   end
 
   resources :statuses

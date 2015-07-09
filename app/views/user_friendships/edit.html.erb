@@ -1,0 +1,17 @@
+<div class="page-header">
+	<h1>Friends</h1>
+</div>
+
+	
+
+<div class="form-actions">
+  <% if @user_friendship.requested? %>
+    <%= form_for @user_friendship, url: accept_user_friendship_path(@user_friendship), method: :put do |form| %>
+      <%= submit_tag "Accept Friend", class: 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+
+  <%= form_for @user_friendship, url: user_friendship_path(@user_friendship), method: :delete do |form| %>
+      <%= submit_tag "Delete Friend", class: 'btn btn-danger' %>
+  <% end %>
+</div>
