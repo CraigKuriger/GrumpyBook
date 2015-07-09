@@ -1,7 +1,10 @@
 class UserFriendshipsController < ApplicationController
 
 
-	before_filter :authenticate_user!, only: [new]
+	before_filter :authenticate_user!
+
+	def index
+	end
 
 	def new
 		if params[:friend_id]
