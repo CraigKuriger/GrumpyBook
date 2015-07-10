@@ -5,6 +5,7 @@ class UserFriendshipsController < ApplicationController
 
 	def index
 		@user_friendships = current_user.user_friendships.all
+		respond_with @user_friendships
 	end
 
 	def accept
@@ -55,6 +56,11 @@ class UserFriendshipsController < ApplicationController
 	      redirect_to root_path
 	    end
 	  end
+
+	  # def edit
+	  # 	@friend = User.where(profile_name: params[:id]).first
+	  # 	@user_friendship = current_user.user_friendships.where(friend_id: @friend.id).first.decorate
+	  # end
 
 	def edit
 		@user_friendship = current_user.user_friendships.find(params[:id]).decorate
