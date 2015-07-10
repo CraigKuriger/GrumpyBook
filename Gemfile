@@ -7,6 +7,8 @@ gem 'sqlite3'
 gem 'devise'
 gem 'simple_form'
 gem 'state_machine'
+gem 'draper'
+gem 'js-routes'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
