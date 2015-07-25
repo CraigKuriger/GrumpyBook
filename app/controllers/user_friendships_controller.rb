@@ -21,7 +21,7 @@ class UserFriendshipsController < ApplicationController
 	def accept
 		@user_friendship = current_user.user_friendships.find(params[:id])
 		if @user_friendship.accept!
-			flash[:success] = "You are now connected to #{@user_friendship.friend.first_name}"
+			flash[:notice] = "You are now connected to #{@user_friendship.friend.first_name}"
 		else
 			flash[:error] = "Declined"
 		end
