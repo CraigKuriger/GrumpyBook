@@ -2,20 +2,14 @@
 	<h1>Friends</h1>
 </div>
 
-<h3><%= @user_friendship.sub_message %></h3>
+<% if @user_friendship.requested? %>
+  <h3>Do you want to be friends with <%= @friend.first_name %>?</h3>
+<% end %>
 
-<hr />
-<div class="row">
-  <div class="avatar span2">
-    <%= image_tag @user_friendship.user.gravatar_url %><br />
-    <%= @user_friendship.user.first_name %>
-  </div>
-  <div class="avatar span2">
-    <%= image_tag @user_friendship.friend.gravatar_url %><br />
-    <%= @user_friendship.friend.first_name %>
-  </div>
-</div>
-<hr />
+<% if @user_friendship.accepted? %>
+  <h3>You are friends with <%= @friend.first_name %></h3>
+<% end %>
+
 
 <div class="form-actions">
   <% if @user_friendship.requested? %>
