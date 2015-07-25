@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :user_friendships do
     member do
       put :accept
+      put :block
     end
   end
 
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
   root to: 'statuses#index'
 
   get '/:id', to: 'profiles#show', as: 'profile'
+
+  # get '/user_friendships/:id/edit', to: 'user_friendships#edit_alt', as: 'alt_edit_user_friendship_path'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

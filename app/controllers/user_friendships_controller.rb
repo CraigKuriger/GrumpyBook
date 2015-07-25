@@ -8,6 +8,16 @@ class UserFriendshipsController < ApplicationController
 		respond_with @user_friendships
 	end
 
+	def block
+		@user_friendship = current_user.user_friendships.find(params[:id])
+		if @user_friendship.block!
+			flash[:notice] = "You have blocked #{@user_friendship.friend.first_name}"
+		else
+			flash[:error] = "That friend could not be blocked"
+		end
+		redirect_to user_friendships_path
+	end
+
 	def accept
 		@user_friendship = current_user.user_friendships.find(params[:id])
 		if @user_friendship.accept!
@@ -57,20 +67,15 @@ class UserFriendshipsController < ApplicationController
 	    end
 	  end
 
-	  # def edit
-	  # 	@friend = User.where(profile_name: params[:id]).first
-	  # 	@user_friendship = current_user.user_friendships.where(friend_id: @friend.id).first.decorate
-	  # end
-
 	def edit
 		@user_friendship = current_user.user_friendships.find(params[:id]).decorate
 		@friend = @user_friendship.friend
 	end
 
-	# def edit
-	# 	@user_friendship = current_user.user_friendships.find(params[:id])
-	# 	@friend = @user_friendship.friend
-	# end
+	def edit_alt
+	  	@friend = User.where(profile_name: params[:id]).first
+	  	@user_friendship = current_user.user_friendships.where(friend_id: @friend.id).first.decorate
+	end
 
 	def destroy
 		@user_friendship = current_user.user_friendships.find(params[:id])
