@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
 
   has_many :pending_friends, -> { where user_friendships: { state: "pending" } }, through: :user_friendships, source: :friend
 
+  ###-----------###
+
+  has_many :requested_user_friendships, -> { where user_friendships: { state: "requested"}}, through: :user_friendships
+
+  has_many :requested_friends, -> { where user_friendships: { state: "requested" } }, through: :user_friendships, source: :friend
+
   def full_name
   	first_name + " " + last_name
   end
