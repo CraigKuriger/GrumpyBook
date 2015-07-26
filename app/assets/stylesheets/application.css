@@ -16,11 +16,16 @@
 
 body {
     padding-top: 70px; 
+    font-family: 'Varela', sans-serif;
 }
 
 .small-image {
 	max-height: 45px;
 	margin-top: -12px;
+}
+
+.image {
+	margin-right: 30px;
 }
 
 footer {

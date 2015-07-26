@@ -9,14 +9,14 @@
 <hr>
 
 <% @statuses_desc.each do |status| %>
-  <div class="row">
+  <div class="row well">
     <% if can_display_status?(status)%>
 
-      <div class="col-sm-1">
+      <div class="col-sm-1 image">
         <%= link_to image_tag(status.user.gravatar_url), profile_path(status.user) %>
 
       </div>
-      <div class="col-sm-11">
+      <div class="col-sm-7">
         <strong><%= link_to status.user.full_name, (status.user.profile_name) %></strong>
         <p><%= status.content %></p>
         <div class="meta">
