@@ -1,6 +1,7 @@
-<div class="page-header">
+<div class="row">
 	<h1>Friends</h1>
 </div>
+<hr>
 
 <div class="row">
   	<div class="col-sm-2">
@@ -14,7 +15,8 @@
 
     <div class="col-sm-2">
     <p class="alert-info"><%= @user_friendship.sub_message %></p>
-
+    </div>
+    <div class="col-sm-2">
         <% if @user_friendship.requested? %>
           <%= form_for @user_friendship, url: accept_user_friendship_path(@user_friendship), method: :put do |form| %>
             <%= submit_tag "Accept Friend", class: 'btn btn-primary' %>

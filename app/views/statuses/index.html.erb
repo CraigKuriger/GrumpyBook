@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-sm-8">
-    <h1>NewsFeed</h1>
+    <h1>Newsfeed</h1>
   </div>
   <div class="col-sm-4">
-    <%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
+    <h3><%= link_to " Create New Post", new_status_path, class:"fa fa-pencil-square-o btn btn-danger" %></h3>
   </div>
 </div>
 <hr>
@@ -22,8 +22,8 @@
         <div class="meta">
           <%= link_to time_ago_in_words(status.created_at) + " ago", status %> 
           <span class="admin">
-            | <%= link_to "Edit", edit_status_path(status) %> | 
-            <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
+            | <%= link_to "", edit_status_path(status), class:"fa fa-pencil-square-o" %> | 
+            <%= link_to "", status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"}, class:"fa fa-trash-o" %>
           </span>
         </div>
       </div> 

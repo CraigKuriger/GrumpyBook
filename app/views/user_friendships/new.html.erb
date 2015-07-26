@@ -8,7 +8,7 @@
 	<div class="form form-actions">
 		<%= form.hidden_field :friend_id, value: @friend.profile_name %>
 		<%= submit_tag "Yes", class: "btn btn-primary" %>
-		<%= link_to "No", profile_path(@friend), class: "btn" %>
+		<%= link_to "No", profile_path(@friend), class: "btn btn-danger" %>
 	</div>
 <% end %>
 
